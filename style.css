@@ -93,9 +93,15 @@
 
 
 .qs-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  text-align: center;
+  font-size: 2.7rem;
+  font-weight: 600;
+  font-family: "Work Sans", sans-serif;
+  color: #004283;
+
+  width: 50%;          /* ocupa la mitad izquierda del contenedor */
+  text-align: center;  /* centrado dentro de esa mitad */
+  margin-left: 0;      /* pegado al lado izquierdo */
+  padding-top: 10px;
   margin-bottom: 30px;
 }
 
