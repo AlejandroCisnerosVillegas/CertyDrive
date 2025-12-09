@@ -93,12 +93,12 @@
 
 
 .qs-title {
-  font-size: 2.7rem;
+  font-size: 3rem;
   font-weight: 600;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Urbanist", sans-serif;
   color: #004283;
 
-  width: 50%;          /* ocupa la mitad izquierda del contenedor */
+  width: 65%;          /* ocupa la mitad izquierda del contenedor */
   text-align: center;  /* centrado dentro de esa mitad */
   margin-left: 0;      /* pegado al lado izquierdo */
   padding-top: 10px;
@@ -111,31 +111,46 @@
   align-items: flex-start;
 }
 
-.qs-left,
+.qs-left {
+  flex: 0 0 65%;   /* ocupa el 70% */
+}
+
 .qs-right {
-  flex: 1;
+  flex: 1;               /* se adapta */
+  max-width: 35%;        /* límite */
+  min-width: 0;
+
+  display: flex;
+  justify-content: center;   /* centra horizontal */
+  align-items: flex-start;   /* fija arriba */
+  width: 100%;               /* importante para centrar correctamente */
 }
 
 /* Logo centrado */
 .qs-logo {
   display: block;
   margin: 0 auto;
-  max-width: 180px;
+  max-width: 275px;
+  margin-bottom: 45px;
 }
 
 /* Texto centrado debajo del logo */
 .qs-text {
   text-align: center;
   margin-top: 20px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.4;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 520;
+  color: #004283;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 /* Imagen de familia */
 .qs-family {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 12px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
