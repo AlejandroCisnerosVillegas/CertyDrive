@@ -1,46 +1,58 @@
+/* Título */
 .qs-title {
   font-size: 3rem;
   font-weight: 600;
   font-family: "Urbanist", sans-serif;
   color: #004283;
-
-  width: 65%;          /* ocupa la mitad izquierda del contenedor */
-  text-align: center;  /* centrado dentro de esa mitad */
+  text-align: center;
+  margin-bottom: 30px;
+  width: 60%;          /* ocupa la mitad izquierda del contenedor */
   margin-left: 0;      /* pegado al lado izquierdo */
   padding-top: 10px;
-  margin-bottom: 30px;
 }
 
+/* Contenedor principal */
 .qs-wrapper {
   display: flex;
   gap: 30px;
   align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;      /* permite que baje en pantallas pequeñas */
 }
 
+/* Lado izquierdo */
 .qs-left {
-  flex: 0 0 65%;   /* ocupa el 70% */
+  flex: 1;
+  max-width: 55%;
+  min-width: 300px;     /* evita que se rompa */
 }
 
+/* Lado derecho */
 .qs-right {
-  flex: 1;               /* se adapta */
-  max-width: 35%;        /* límite */
-  min-width: 0;
-
+  flex: 1;
+  max-width: 45%;
+  min-width: 300px;      /* evita compresión */
   display: flex;
-  justify-content: center;   /* centra horizontal */
-  align-items: flex-start;   /* fija arriba */
-  width: 100%;               /* importante para centrar correctamente */
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-/* Logo centrado */
+/* Wrapper del logo */
+.qs-logo-wrapper {
+  padding-left: 10vw;
+  padding-right: 5vw;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3vh;
+}
+
+/* Imagen del logo */
 .qs-logo {
-  display: block;
-  margin: 0 auto;
   max-width: 275px;
-  margin-bottom: 45px;
+  width: 100%;
 }
 
-/* Texto centrado debajo del logo */
+/* Texto */
 .qs-text {
   text-align: center;
   margin-top: 20px;
@@ -49,14 +61,70 @@
   font-family: "Urbanist", sans-serif;
   font-weight: 520;
   color: #004283;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 10vw;
+  padding-right: 5vw;
 }
 
-/* Imagen de familia */
-.qs-family {
-  max-width: 100%;
-  height: auto;
+/* Imagen principal */
+.img-box {
+  margin-top: 4%;
+  width: 80%;
+  max-width: 500px;
+  aspect-ratio: 15/9;
+  overflow: hidden;
   border-radius: 12px;
-  display: block;
+}
+
+.qs-family {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------------------------------ */
+/*         RESPONSIVE             */
+/* ------------------------------ */
+
+/* Tablets o pantallas medianas */
+@media (max-width: 900px) {
+  .qs-left,
+  .qs-right {
+    max-width: 100%;
+  }
+
+  .qs-title {
+    font-size: 2.5rem;
+  }
+
+  .img-box {
+    width: 90%;
+  }
+}
+
+/* Teléfonos */
+@media (max-width: 600px) {
+  .qs-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .qs-title {
+    font-size: 2rem;
+  }
+
+  .qs-logo-wrapper {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .qs-text {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    font-size: 1rem;
+  }
+
+  .img-box {
+    width: 100%;
+    aspect-ratio: 16/10;
+  }
 }
