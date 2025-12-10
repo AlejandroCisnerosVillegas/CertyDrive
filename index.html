@@ -27,47 +27,14 @@
 
     <!-- Assets CSS -->
     <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/AboutSection.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="navbar"></div>
+    <div id="AboutSection"></div>
 
-    <!-- Título -->
-    <div class="qs-title">¿Quiénes somos?</div>
-
-    <!-- Contenedor principal -->
-    <div class="qs-wrapper">
-      <!-- Lado izquierdo -->
-      <div class="qs-left">
-        <div class="qs-logo-wrapper">
-          <img src="img/logo.png" class="qs-logo" alt="Logo" />
-        </div>
-        
-
-        <p class="qs-text">
-          Somos una empresa que tiene como misión el generar una opción justa
-          para adquirir un automóvil con posibilidades que se ajusten al
-          cliente.
-        </p>
-        <p class="qs-text">Su seguridad y confianza es nuestra prioridad.</p>
-        <p class="qs-text">
-          Nos enorgullece ofrecerte soluciones flexibles para que puedas
-          estrenar un automóvil o una motocicleta del año, o si lo prefieres un
-          seminuevo certificado y garantizado.
-        </p>
-      </div>
-
-      <!-- Lado derecho -->
-      <div class="qs-right">
-        <div class="img-box">
-          <img
-          src="img/prestamo-vehicular.jpg"
-          class="qs-family"
-          alt="Familia feliz"
-        />
-        </div>
-      </div>
-    </div>
+    
 
     <!-- JS Bootstrap -->
     <script src="vendor/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
@@ -77,6 +44,11 @@
       fetch("components/general/navbar.html")
         .then((r) => r.text())
         .then((html) => (document.getElementById("navbar").innerHTML = html));
+    </script>
+    <script>
+      fetch("components/home/AboutSection.html")
+        .then((r) => r.text())
+        .then((html) => (document.getElementById("AboutSection").innerHTML = html));
     </script>
   </body>
 </html>
