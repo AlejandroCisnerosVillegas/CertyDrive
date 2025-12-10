@@ -1,5 +1,5 @@
 /* Título */
-.qs-title {
+.abt-title {
   font-size: 3rem;
   font-weight: 600;
   font-family: "Urbanist", sans-serif;
@@ -12,7 +12,7 @@
 }
 
 /* Contenedor principal */
-.qs-wrapper {
+.abt-wrapper {
   display: flex;
   gap: 30px;
   align-items: flex-start;
@@ -21,14 +21,14 @@
 }
 
 /* Lado izquierdo */
-.qs-left {
+.abt-left {
   flex: 1;
   max-width: 55%;
   min-width: 300px;     /* evita que se rompa */
 }
 
 /* Lado derecho */
-.qs-right {
+.abt-right {
   flex: 1;
   max-width: 45%;
   min-width: 300px;      /* evita compresión */
@@ -38,7 +38,7 @@
 }
 
 /* Wrapper del logo */
-.qs-logo-wrapper {
+.abt-logo-wrapper {
   padding-left: 10vw;
   padding-right: 5vw;
   display: flex;
@@ -47,13 +47,13 @@
 }
 
 /* Imagen del logo */
-.qs-logo {
+.abt-logo {
   max-width: 275px;
   width: 100%;
 }
 
 /* Texto */
-.qs-text {
+.abt-text {
   text-align: center;
   margin-top: 20px;
   font-size: 1.2rem;
@@ -75,7 +75,7 @@
   border-radius: 12px;
 }
 
-.qs-family {
+.abt-family {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -87,12 +87,12 @@
 
 /* Tablets o pantallas medianas */
 @media (max-width: 900px) {
-  .qs-left,
-  .qs-right {
+  .abt-left,
+  .abt-right {
     max-width: 100%;
   }
 
-  .qs-title {
+  .abt-title {
     font-size: 2.5rem;
   }
 
@@ -103,21 +103,21 @@
 
 /* Teléfonos */
 @media (max-width: 600px) {
-  .qs-wrapper {
+  .abt-wrapper {
     flex-direction: column;
     gap: 20px;
   }
 
-  .qs-title {
+  .abt-title {
     font-size: 2rem;
   }
 
-  .qs-logo-wrapper {
+  .abt-logo-wrapper {
     padding-left: 5vw;
     padding-right: 5vw;
   }
 
-  .qs-text {
+  .abt-text {
     padding-left: 5vw;
     padding-right: 5vw;
     font-size: 1rem;
