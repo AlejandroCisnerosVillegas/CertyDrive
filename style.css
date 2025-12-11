@@ -1,53 +1,102 @@
+/* Título */
 .svs-title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 600;
   font-family: "Urbanist", sans-serif;
   color: #004283;
-  text-align: left;
-  padding-top: 5vw;
-  padding-left: 3vw;
+  text-align: center;
   margin-bottom: 30px;
+  width: 35%;          /* ocupa la mitad izquierda del contenedor */
+  margin-left: 0;      /* pegado al lado izquierdo */
   padding-top: 10px;
 }
 
 
+.icon-card {
+  font-size: 1.7rem;
+  align-items: center;
+  color: #004283;
+  margin-right: 15px;
+  vertical-align: text-bottom;
+}
+/*===========================
+  card-01 css
+===========================*/
 .single-card {
   box-shadow: var(--shadow-1);
   border-radius: 8px;
   overflow: hidden;
-  margin-top: 30px;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
+  display: flex;
+  flex-direction: column;
+  height: var(--card-height, 350px);
+  box-sizing: border-box;
   background-color: #D2F587;
+  font-family: "Urbanist", sans-serif;
 }
 .single-card:hover {
   box-shadow: var(--shadow-4);
 }
+.single-card .card-image {
+  flex: 0 0 60%;
+  overflow: hidden;
+}
+
 .single-card .card-image img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .single-card .card-content {
-  padding: 16px;
-  color: #004283;
+  text-align: center;
+  padding: 15px 15px 0px 15px;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
 }
 .single-card .card-content .card-title {
   margin-bottom: 0;
-  text-align: center;
-  margin-left: 10;
 }
- .single-card .card-content .icon-card {
-  margin-right: 8px;
- }
 .single-card .card-content .card-title a {
   color: #004283;
   text-decoration: none;
+  font-weight: 700;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.single-card .card-content .card-title a:hover {
+  color: var(--primary);
+}
+.single-card .card-content .text {
+  color: #004283;
+  margin-top: 8px;
 }
 
-.single-card .card-content .text {
-  color: var(--dark-3);
-  margin-top: 8px;
+.btn-services .btn-primary {
+  background-color: #004283;
+  border-color: #004283;
+  color: #fff;
+
+}
+
+.btn-services .btn-primary:hover {
+  background-color: #003366;
+  border-color: #003366;
+
+}
+
+.alignment-service {
+ display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centra verticalmente */
+  padding: 10px;
+  flex: 1;
 }
