@@ -9,3 +9,45 @@
   margin-bottom: 30px;
   padding-top: 10px;
 }
+
+
+.single-card {
+  box-shadow: var(--shadow-1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 30px;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  background-color: #D2F587;
+}
+.single-card:hover {
+  box-shadow: var(--shadow-4);
+}
+.single-card .card-image img {
+  width: 100%;
+  height: 100%;
+}
+.single-card .card-content {
+  padding: 16px;
+  color: #004283;
+}
+.single-card .card-content .card-title {
+  margin-bottom: 0;
+  text-align: center;
+  margin-left: 10;
+}
+ .single-card .card-content .icon-card {
+  margin-right: 8px;
+ }
+.single-card .card-content .card-title a {
+  color: #004283;
+  text-decoration: none;
+}
+
+.single-card .card-content .text {
+  color: var(--dark-3);
+  margin-top: 8px;
+}

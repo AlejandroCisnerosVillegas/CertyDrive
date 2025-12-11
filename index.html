@@ -27,15 +27,77 @@
 
     <!-- Assets CSS -->
     <link rel="stylesheet" href="assets/css/navbar.css" />
-    <link rel="stylesheet" href="assets/css/AboutSection.css">
+    <link rel="stylesheet" href="assets/css/about_home.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="navbar"></div>
-    <div id="AboutSection"></div>
+    <div id="about"></div>
 
     <div class="svs-title">Nuestros servicios</div>
     
+    <!--====== CARD PART START ======-->
+<section class="card-area pb-5">
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-lg-4 col-md-7 col-sm-9">
+            <div class="single-card card-style-one">
+               <div class="card-content">
+                  <h4 class="card-title">
+                     <a href="javascript:void(0)">Plan Auto</a>
+                  </h4>
+                  <p class="text">
+                     Tu auto nuevo a seminuevo a tu alcance con atractivas opciones de crédito que tenemos para ti.
+                  </p>
+               </div>
+               <div class="card-image">
+                  <img src="img/prestamo-vehicular.jpg" alt="Image" />
+               </div>
+              
+            </div>
+            <!-- single-card -->
+         </div>
+         <!-- col -->
+         <div class="col-lg-4 col-md-7 col-sm-9">
+            <div class="single-card card-style-one">
+               <div class="card-image">
+                  <img src="https://cdn.ayroui.com/1.0/images/card/card-2.jpg" alt="Image" />
+               </div>
+               <div class="card-content">
+                  <h4 class="card-title">
+                     <i class="fa-solid fa-motorcycle icon-card"></i><a href="javascript:void(0)">Plan Moto</a>
+                  </h4>
+                  <p class="text">
+                     Si lo tuyo es andar sobre 2 ruedas, este plan es perfecto y accesible.
+                  </p>
+               </div>
+            </div>
+            <!-- single-card -->
+         </div>
+         <!-- col -->
+         <div class="col-lg-4 col-md-7 col-sm-9">
+            <div class="single-card card-style-one">
+               <div class="card-image">
+                  <img src="https://cdn.ayroui.com/1.0/images/card/card-3.jpg" alt="Image" />
+               </div>
+               <div class="card-content">
+                  <h4 class="card-title">
+                     <a href="javascript:void(0)">Plan Liquidez</a>
+                  </h4>
+                  <p class="text">
+                     Comienza a formar tu patrimonio con nosotros. La cas, negocio o emprendimiento ahora es posible.
+                  </p>
+               </div>
+            </div>
+            <!-- single-card -->
+         </div>
+         <!-- col -->
+      </div>
+      <!-- row -->
+   </div>
+   <!-- container -->
+</section>
+<!--====== CARD PART ENDS ======-->
 
 
     
@@ -50,9 +112,9 @@
         .then((html) => (document.getElementById("navbar").innerHTML = html));
     </script>
     <script>
-      fetch("components/home/AboutSection.html")
+      fetch("components/home/about.html")
         .then((r) => r.text())
-        .then((html) => (document.getElementById("AboutSection").innerHTML = html));
+        .then((html) => (document.getElementById("about").innerHTML = html));
     </script>
   </body>
 </html>
