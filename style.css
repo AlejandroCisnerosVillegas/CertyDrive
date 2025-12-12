@@ -1,132 +1,150 @@
-/* Carousel heading */
-.heading {
-  display: block;
-  text-align: center;
-}
+/* Fuente solo para el componente */
+.wrapper_testimonial {
+  --font: "Poppins", sans-serif;
+  font-family: var(--font);
 
-/* Container for the entire carousel */
-.multi-carousel-container {
-  cursor: grab;
-  margin: 0 auto;
-  max-width: 100%;
-  overflow: hidden;
+  margin: 0 auto; 
+  max-width: 1100px;
+  width: 100%;
   position: relative;
 }
 
-/* Cursor styles for dragging */
-.multi-carousel-container.dragging,
-#multiCarousel.dragging {
-  cursor: grabbing;
-}
-
-/* Wrapper for all slides */
-.multi-carousel-inner {
-  display: flex;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* Individual slide */
-.multi-carousel-item,
-.clone {
-  box-sizing: border-box;
-  flex: 0 0 33.333333%;
-  padding: 0 5px;
-  position: relative; /* Essential for item-number positioning */
-}
-
-/* Control buttons */
-.multi-carousel-control-prev,
-.multi-carousel-control-next {
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  height: 40px;
-  justify-content: center;
+/* Botones */
+.wrapper_testimonial i {
   position: absolute;
-  text-decoration: none;
   top: 50%;
   transform: translateY(-50%);
-  transition: background-color 0.3s ease;
-  width: 40px;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+
+  font-size: 1.25rem;
+  cursor: pointer;
+
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+
+  transition: transform 0.1s linear;
+  z-index: 50;
+}
+
+.wrapper_testimonial i:active {
+  transform: translateY(-50%) scale(0.85);
+}
+
+.wrapper_testimonial i:first-child {
+  left: -22px;
+}
+
+.wrapper_testimonial i:last-child {
+  right: -22px;
+}
+
+/* Carrusel */
+.wrapper_testimonial .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 10px); 
+  gap: 16px;
+
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  border-radius: 8px;
+  scrollbar-width: none;
+}
+
+/* Sin scroll visible */
+.wrapper_testimonial .carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estados del carrusel */
+.wrapper_testimonial .carousel.no-transition {
+  scroll-behavior: auto;
+}
+
+.wrapper_testimonial .carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.wrapper_testimonial .carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+
+/* Cards */
+.wrapper_testimonial .carousel .card {
+  
+  height: 260px;
+  padding: 0;          /* ← Cambiar aquí */
+  background: #4020b7;
+  border-radius: 8px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.3s ease;
+  transform: scale(0.85);
+}
+
+/* Card activa */
+.wrapper_testimonial .carousel .card.active {
+  transform: scale(1);
   z-index: 10;
 }
 
-.multi-carousel-control-prev:hover,
-.multi-carousel-control-next:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
+/* Imagen circular */
+.wrapper_testimonial .card .img {
+   width: 100%;          /* ocupa todo el ancho */
+  height: 100%;         /* ocupa 60% del alto de la tarjeta */
+  border-radius: 0;     /* sin forma circular */
+  overflow: hidden;     /* recorta excedentes */
 
-.multi-carousel-control-prev {
-  left: 10px;
-}
+  background: #8B53FF;
 
-.multi-carousel-control-next {
-  right: 10px;
-}
-
-/* Image container with dynamic height */
-.img-container {
-  border-radius: 1.5rem;
-  height: var(--carousel-height, 80vh);
-  overflow: hidden;
-  position: relative;
-}
-
-/* Image styling */
-.img-container img,
-#carouselInner img {
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  pointer-events: none;
-  user-drag: none;
-  width: 100%;
-  -webkit-user-drag: none;
-  transition: transform 0.3s ease;
-}
-
-.img-container:hover img {
-  transform: translateZ(0) scale(1.02);
-}
-
-/* Item number styling - guaranteed visibility */
-.item-number {
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 50%;
-  display: inline-flex;
-  font-size: 120%;
-  font-weight: bold;
-  height: 35px;
+  display: flex;
   justify-content: center;
-  left: 1rem;
-  position: absolute;
-  top: 1rem;
-  width: 35px;
-  z-index: 2; /* Higher than default but below controls */
-  /* Isolation prevents z-index context issues */
-  isolation: isolate;
+  align-items: center;
 }
 
-/* Carousel cursor styling */
-#multiCarousel {
-  cursor: grab;
-  touch-action: pan-y;
+.wrapper_testimonial .card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* imagen se adapta sin deformarse */
+  border-radius: 0;
+  border: none;
 }
 
-/* Disable text selection during drag */
-#multiCarousel.dragging {
-  user-select: none;
-  -webkit-user-select: none;
+/* Texto */
+.wrapper_testimonial .carousel .card h2 {
+  font-family: var(--font);
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
 }
 
-/* Responsive adjustments for screens smaller than 720px (45em) */
-@media (max-width: 45em) {
-  .multi-carousel-item,
-  .clone {
-    flex: 0 0 100%;
+.wrapper_testimonial .carousel .card span {
+  font-family: var(--font);
+  font-size: 1.31rem;
+  color: #6A6D78;
+}
+
+/* Responsivo */
+@media screen and (max-width: 900px) {
+  .wrapper_testimonial .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
   }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper_testimonial .carousel {
+    grid-auto-columns: 100%;
+  }
+}
